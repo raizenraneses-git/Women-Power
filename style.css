@@ -1,0 +1,774 @@
+/* ===================================================== */
+/* GLOBAL RESET (COMBINED - NO CHANGES TO DESIGN) */
+/* ===================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Philosopher", serif;
+  overflow-x: hidden;
+  min-width: 320px;
+  background-color: #fff; /* main site background */
+  color: #ffffff;
+}
+
+
+/* ===================================================== */
+/* ================= PARALLAX SECTION ================== */
+/* ===================================================== */
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #f6f5ea;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* makes it behave like background-size: cover */
+  z-index: 1;
+}
+
+
+.hero-logo {
+  position: relative;
+  z-index: 30;
+  text-align: center;
+}
+
+.hero-logo img {
+  width: 680px !important;
+  height: auto;
+}
+
+
+/* ===================================================== */
+/* ===================== NAVBAR ======================== */
+/* ===================================================== */
+
+.navbar {
+  width: 100%;
+  background-color: #E51775;
+  padding: 1.5rem 2vw;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.logo {
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+  max-width: 1450px;
+}
+
+.logo img {
+  height: clamp(1px, 4vh, 30px);
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 140px;
+  list-style: none;
+  justify-content: center;
+}
+
+.nav-links li a {
+  display: flex;
+  margin-right: 35px;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  white-space: nowrap;
+  transition: color 0.2s;
+  font-size: 24px;
+  font-family: 'DM Display Display', serif;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+
+/* ===================================================== */
+/* ===================== SECTIONS ====================== */
+/* ===================================================== */
+
+.about {
+  background-color: #fff;
+  width: 100%;
+  max-width: 1450px;
+  margin: auto;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: flex-start; /* "left" is invalid in flex */
+  align-items: flex-start;     /* "left" is invalid in flex */
+  height: auto;
+  box-sizing: border-box;
+}
+
+
+.about-content h1 {
+  margin-bottom: 25px;
+  font-family: 'DM Serif Diplay', serif;
+  font-size: 48px;
+  color: #E51775;
+  line-height: 100%;
+  text-align: left;
+  letter-spacing: 0%;
+}
+
+.about-content p {
+  max-width: 1436px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  font-weight: 400;
+  text-align: left;
+  color: #0F0414;
+}
+
+/* ========================================
+   AWARDEE SECTION
+======================================== */
+.awardee-section {
+  background-color: #fff;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 1450px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.awardee-content {
+  width: 100%;
+  max-width: 1450px;
+  margin-top: -30px;
+  box-sizing: border-box;
+}
+
+.awardee-section h1 {
+  margin-bottom: 25px;
+  font-family: 'DM Serif Diplay', serif;
+  font-size: 48px;
+  color: #E51775;
+  line-height: 100%;
+  text-align: left;
+  letter-spacing: 0%;
+}
+
+/* ========================================
+   CARD SLIDER
+======================================== */
+.card-slider {
+  margin-top: 30px;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+
+.card-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-wrapper {
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.card {
+  flex: 0 0 auto;
+  height: 270px;
+  margin-top: 20px;
+  padding: 10px 50px;
+  border-radius: 20px;
+  text-align: center;
+  color: #0F0414;
+}
+
+.card .avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: #0F0414;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0%;
+  margin: 15px;
+}
+
+.card p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0%;
+  margin-top: -10px;
+}
+
+/* ========================================
+   VIDEO SECTION
+======================================== */
+.video-section {
+  background-color: #fff;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1450px;
+  margin: auto;
+}
+
+.video-content {
+  width: 100%;
+  max-width: 1450px;
+  margin-top: -40px;
+}
+
+.video-section h1 {
+  margin-bottom: 25px;
+  font-family: 'DM Serif Diplay', serif;
+  font-size: 48px;
+  color: #E51775;
+  line-height: 100%;
+  text-align: left;
+  letter-spacing: 0%;
+}
+
+.video-section p {
+  max-width: 1436px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  font-weight: 400;
+  text-align: left;
+  color: #000;
+}
+
+.white-box {
+  width: 1136;
+  height: 639px;
+  background-color: #0F0414;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+/* ========================================
+   STORY SECTION
+======================================== */
+.story-section {
+  background-color: #fff;
+  padding: 60px 20px;
+  max-width: 1450px;
+  margin: auto;
+}
+
+.story-content {
+  max-width: 1450px;
+  margin: -50px auto 0;
+}
+
+.story-section h1 {
+  margin-bottom: 25px;
+  font-family: 'DM Serif Diplay', serif;
+  font-size: 48px;
+  color: #E51775;
+  line-height: 100%;
+  text-align: left;
+  letter-spacing: 0%;
+}
+
+.story-section p {
+  max-width: 1436px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  font-weight: 400;
+  text-align: left;
+  color: #0F0414;
+  margin-top: 25px;
+}
+
+/* ========================================
+   STORIES GRID
+======================================== */
+.stories {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.stories-header {
+  max-width: 700px;
+  margin-bottom: 20px;
+}
+
+.stories-header h1 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.story-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 250px;
+  background-color: #0F0414;
+  margin-bottom: 10px;
+}
+
+.story-card h3 {
+  font-family: 'Poppines', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: #0F0414;
+}
+
+.story-card .date {
+  font-family: 'Poppines', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0%;
+  color: #0F0414;
+  margin-top: 10px;
+}
+
+.button {
+  width: 213px;
+  height: 36px;
+  border-radius: 8px;       /* px instead of % for consistent rounding */
+  cursor: pointer;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif; /* optional: nicer font */
+  font-size: 16px;
+  color: #fff;               /* button text color */
+  background-color: #E51775; /* button color */
+  border: none;              /* remove default border */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 30px;
+}
+
+.button:hover {
+  background-color: #fff; /* darker on hover */
+  transform: scale(1.05);    /* subtle zoom effect */
+  color: #E51775;
+  border: 1px solid #E51775;
+}
+
+.button:active {
+  transform: scale(0.98);    /* pressed effect */
+}
+
+/* ========================================
+   SPONSOR SECTION
+======================================== */
+.sponsor-section {
+  background-color: #fff;
+  padding: 20px 20px 10px;
+  width: 100%;
+  max-width: 1450px;
+  margin: auto;
+}
+
+.sponsor-section h1 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin-bottom: 20px;
+  color: #E51775;
+}
+
+.logo-card {
+  display: flex;
+  align-items: center;      /* vertically center */
+  justify-content: space-between; /* spread items across the row */
+  width: 101%;              /* make sure it stretches full width */
+  padding: 0 20px;          /* optional: some side padding */
+  height: 100px;
+  margin-left: -15px;
+}
+
+.logo-card div {
+  font-size: 40px;
+  font-weight: 700;
+  max-width: 300px;        /* optional: prevents text from getting too wide */
+  text-align: center;      /* center the middle item nicely */
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #0F0414;
+  font-family: 'Poppines', sans-serif;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+.footer-section {
+  background-color: #E51775;
+  padding: 40px 10px;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1450px;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+}
+
+.logo-footer {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  height: 34px;
+  width: auto;
+  margin-top: 10px;
+}
+
+
+.footer-nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 160px;
+  margin: 0 0 30px 0;
+  margin-top: 40px;
+  padding: 0;
+}
+
+.footer-nav-links a {
+  text-decoration: none;
+  font-family: 'DM Serif Display', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0%;
+  color: #fff;
+  position: relative;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.footer-nav-links a::hover {
+  background-color: #fff;
+}
+
+.footer-nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.footer-nav-links a:hover::after {
+  width: 100%;
+}
+
+footer p {
+  margin-top: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 145%;
+  letter-spacing: -0.5%;
+  color: #fff;
+  opacity: 0.8;
+  text-align: center;
+}
+
+/* ===================================================== */
+/* ================= MOBILE RESPONSIVE ================= */
+/* ===================================================== */
+
+@media (max-width: 768px) {
+
+  /* HERO */
+
+  .hero {
+    width: auto;
+    height: 50vh;
+  }
+
+  .hero-bg {
+    width: auto;
+    height: 50vh;
+    min-height: 410px;
+  }
+  
+  .hero-logo img {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  /* NAVBAR */
+  .nav-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .nav-links li a {
+    margin-right: 0;
+    font-size: 14px;
+    font-family: 'DM Serif Display', sans-serif;
+    font-weight: 400;
+    gap: 10px;
+  }
+
+  /* SECTION TITLES */
+  .about-content h1,
+  .awardee-section h1,
+  .video-section h1,
+  .story-section h1 {
+    font-size: 32px;
+  }
+
+  /* ABOUT TEXT */
+  .about-content p,
+  .video-section p,
+  .story-section p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  /* CARDS */
+  .card {
+    padding: 10px 20px;
+    text-align: center; /* Center text inside the card */
+    margin: 0 auto;     /* Center the card itself if it has width */
+  }
+
+  .card .avatar {
+    width: 120px;
+    height: 120px;
+    display: block;     /* Para mag-apply ang margin auto sa image */
+    margin: 0 auto;
+  }
+
+  .card h3 {
+    margin: 10px 0 5px 0; /* Alisin ang negative margin */
+  }
+
+  .card p {
+    margin: 0;           /* Alisin ang negative margin */
+    font-size: 16px;
+  }
+
+  /* VIDEO */
+  .white-box {
+    height: 220px;
+  }
+
+  /* STORIES GRID */
+  .stories-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .image-placeholder {
+    height: 200px;
+  }
+
+  /* SPONSOR */
+  .logo-card {
+    flex-direction: column;
+    gap: 50px;
+    height: auto;
+    margin-left: 2px;
+  }
+
+  /* FOOTER */
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .footer-nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .footer-nav-links li a {
+    margin-right: 0;
+    font-size: 14px;
+    font-family: 'DM Serif Display', sans-serif;
+    font-weight: 400;
+  }
+
+}
+
+/* ===================================================== */
+/* ================= TABLET RESPONSIVE ================= */
+/* ===================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* HERO */
+  .hero-logo img {
+    width: 100%;
+  }
+
+  .hero-bg img {
+    width: 100%;
+  }
+
+  /* NAVBAR */
+  .nav-links {
+    gap: 100px;
+  }
+
+  .nav-links a {
+    font-size: 20px;
+  }
+
+  /* TITLES */
+  .about-content h1,
+  .awardee-section h1,
+  .video-section h1,
+  .story-section h1 {
+    font-size: 40px;
+  }
+
+  /* VIDEO */
+  .white-box {
+    height: 400px;
+  }
+
+  /* STORIES GRID */
+  .stories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  /* SPONSOR */
+  .logo-card {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap;             /* prevent wrapping */
+    gap: 70px;                      
+    justify-content: flex-start;   /* align all logos to left */
+    align-items: center;           /* vertical alignment */
+    margin-bottom: 30px;
+  }
+
+  .logo-card h1 {
+    margin-bottom: 50px;
+  }
+
+  .logo-card div {
+    line-height: 100%;
+    letter-spacing: 0%;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  /* FOOTER */
+  .footer-nav-links {
+    gap: 60px;
+  }
+
+}
